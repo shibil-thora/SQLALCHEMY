@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-engine = create_engine(os.environ.get('SQL_CONNECT_URL'), echo=True ) 
+engine = create_engine(os.environ.get('SQL_CONNECT_URL')) 
 meta = MetaData() 
 
 students = Table(
