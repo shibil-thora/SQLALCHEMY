@@ -1,7 +1,10 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String  
-import os
+import os 
+from dotenv import load_dotenv 
 
-engine = create_engine(os.environ.get('SQL_CONNECT_URL'), echo=True) 
+load_dotenv()
+
+engine = create_engine(os.environ.get('SQL_CONNECT_URL'), echo=True ) 
 meta = MetaData() 
 
 students = Table(
@@ -10,5 +13,7 @@ students = Table(
     Column('name', String, index=True), 
     Column('lastname', String),
 ) 
-meta.create_all(engine)
+# #meta.create_all(engine) 
+
+conn = engine.connect()
 
