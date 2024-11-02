@@ -1,10 +1,11 @@
 from db import students, conn  
-from sqlalchemy import update
 
 def run(): 
-    update_query = students.update().values(name='kunjippa') 
-    conn.execute(update_query)  
-    conn.commit()
+    delete_query = students.delete().where(students.c.id == 4) 
+    delete_all = students.delete()
+    result = conn.execute(delete_all)  
+    conn.commit() 
+    print(result.rowcount, 'deleted')
 
 
 if __name__ == '__main__': 

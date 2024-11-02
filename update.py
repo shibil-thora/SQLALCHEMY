@@ -1,8 +1,7 @@
 from db import students, conn  
-from sqlalchemy import update
 
 def run(): 
-    update_query = students.update().values(name='kunjippa') 
+    update_query = students.update().where(students.c.name == 'sathar').values(lastname='nejjapp')
     conn.execute(update_query)  
     conn.commit()
 
