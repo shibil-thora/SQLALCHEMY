@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String  
 import os 
 from dotenv import load_dotenv 
+import sys
 
 load_dotenv()
 
@@ -9,11 +10,17 @@ meta = MetaData()
 
 students = Table(
     'students', meta, 
-    Column('id', Integer, primary_key=True), 
-    Column('name', String, index=True), 
-    Column('lastname', String),
+    Column('id', Integer, primary_key=True, autoincrement=True), 
+    Column('name', String(100)), 
+    Column('lastname', String(100)),
 ) 
-# #meta.create_all(engine) 
 
 conn = engine.connect()
 
+if __name__ == '__main__': 
+    try:
+        if sys.argv[1] == 'create': 
+            meta.create_all(engine)   
+            print('[done!]')
+    except: 
+        pass 
