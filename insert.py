@@ -4,13 +4,15 @@ def run():
     st_ins = students.insert() 
     addr_ins = addresses.insert() 
 
-    # result = conn.execute(st_ins, [
-    #     {'name':'Ravi', 'lastname':'Kapoor'},
-    #     {'name':'Rajiv', 'lastname' : 'Khanna'},
-    #     {'name':'Komal','lastname' : 'Bhandari'},
-    #     {'name':'Abdul','lastname' : 'Sattar'},
-    #     {'name':'Priya','lastname' : 'Rajhans'},
-    # ])
+    result = conn.execute(st_ins, [
+        {'name':'Ravi', 'lastname':'Kapoor'},
+        {'name':'Rajiv', 'lastname' : 'Khanna'},
+        {'name':'Komal','lastname' : 'Bhandari'},
+        {'name':'Abdul','lastname' : 'Sattar'},
+        {'name':'Priya','lastname' : 'Rajhans'},
+    ]) 
+
+    conn.commit()
     
     result = conn.execute(addr_ins, [
         {'st_id':1, 'postal_add':'Shivajinagar Pune', 'email_add':'ravi@gmail.com'},

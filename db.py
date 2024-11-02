@@ -18,7 +18,7 @@ students = Table(
 addresses = Table(
     'addresses', meta, 
     Column('id', Integer, primary_key = True, autoincrement=True), 
-    Column('st_id', Integer, ForeignKey('students.id')), 
+    Column('st_id', Integer, ForeignKey('students.id'), index=True), 
     Column('postal_add', String(255)), 
     Column('email_add', String(255)),
 )
