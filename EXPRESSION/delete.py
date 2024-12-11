@@ -1,4 +1,4 @@
-from db import students, conn  
+from EXPRESSION.db import students, conn  
 
 def run(): 
     delete_query = students.delete().where(students.c.id == 4) 

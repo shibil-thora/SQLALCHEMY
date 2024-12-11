@@ -1,4 +1,4 @@
-from db import students, conn  
+from EXPRESSION.db import students, conn  
 
 def run(): 
     update_query = students.update().where(students.c.name == 'sathar').values(lastname='nejjapp')

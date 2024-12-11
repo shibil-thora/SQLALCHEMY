@@ -1,5 +1,5 @@
 from sqlalchemy.sql import func  
-from db import conn, students, addresses
+from EXPRESSION.db import conn, students, addresses
 from sqlalchemy import select
 
 def run(): 

@@ -1,4 +1,4 @@
-from db import students, conn, addresses
+from EXPRESSION.db import students, conn, addresses
 
 def run(): 
     st_ins = students.insert() 

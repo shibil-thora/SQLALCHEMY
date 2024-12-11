@@ -1,4 +1,4 @@
-from db import students, conn , addresses
+from EXPRESSION.db import students, conn , addresses
 from sqlalchemy import select
 
 def run(): 
